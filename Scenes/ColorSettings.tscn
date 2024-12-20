@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cddpdcp07cy2r"]
+
+[ext_resource type="Script" path="res://Scripts/color_picker.gd" id="1_p2juv"]
+
+[node name="ScrollContainer" type="ScrollContainer"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 549.0
+offset_bottom = 354.0
+
+[node name="ColorSettings" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ColorPicker" type="ColorPicker" parent="ColorSettings"]
+layout_mode = 2
+size_flags_horizontal = 0
+edit_alpha = false
+deferred_mode = true
+picker_shape = 1
+can_add_swatches = false
+color_modes_visible = false
+presets_visible = false
+script = ExtResource("1_p2juv")
+
+[connection signal="color_changed" from="ColorSettings/ColorPicker" to="ColorSettings/ColorPicker" method="_on_color_changed"]

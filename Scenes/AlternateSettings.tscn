@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2xobf8363law"]
+
+[ext_resource type="Script" path="res://Scripts/line_edit.gd" id="1_yqiat"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgejj"]
+bg_color = Color(0.2484, 0.2484, 0.2484, 1)
+
+[sub_resource type="Theme" id="Theme_e4drg"]
+LineEdit/styles/normal = SubResource("StyleBoxFlat_bgejj")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ba840"]
+
+[node name="AlternateSettings" type="VBoxContainer"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 551.0
+offset_bottom = 354.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Enter fade length here:"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_e4drg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ba840")
+context_menu_enabled = false
+clear_button_enabled = true
+middle_mouse_paste_enabled = false
+select_all_on_focus = true
+caret_blink = true
+caret_blink_interval = 1.0
+script = ExtResource("1_yqiat")
+
+[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]

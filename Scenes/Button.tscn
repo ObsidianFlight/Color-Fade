@@ -1,0 +1,122 @@
+[gd_scene load_steps=13 format=3 uid="uid://3v3xo6pfxjrk"]
+
+[ext_resource type="Script" path="res://Scripts/button.gd" id="2_gj74n"]
+[ext_resource type="Texture2D" uid="uid://dq10qsdhvkgwp" path="res://Image/Color Button/UI Button.png" id="3_whc7t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8itj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_751ek"]
+texture = ExtResource("3_whc7t")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d5ksc"]
+texture = ExtResource("3_whc7t")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wth6a"]
+texture = ExtResource("3_whc7t")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v263m"]
+texture = ExtResource("3_whc7t")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l4jmc"]
+texture = ExtResource("3_whc7t")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iutqn"]
+texture = ExtResource("3_whc7t")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1jw01"]
+texture = ExtResource("3_whc7t")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_avr7d"]
+texture = ExtResource("3_whc7t")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i27vy"]
+resource_local_to_scene = true
+texture = ExtResource("3_whc7t")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(0, 70)
+offset_right = 160.0
+offset_bottom = 70.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8itj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_751ek")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_d5ksc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_wth6a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v263m")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_l4jmc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_iutqn")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_1jw01")
+theme_override_styles/normal = SubResource("StyleBoxTexture_avr7d")
+script = ExtResource("2_gj74n")
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 159.0
+offset_bottom = 69.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_i27vy")
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+visible = false
+show_behind_parent = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 157.0
+offset_bottom = 67.0
+mouse_filter = 2
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

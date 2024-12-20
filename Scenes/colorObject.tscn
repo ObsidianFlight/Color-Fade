@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwve3eqsre7qw"]
+
+[ext_resource type="Texture2D" uid="uid://dq10qsdhvkgwp" path="res://Image/Color Button/UI Button.png" id="1_rmfid"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ym8eq"]
+texture = ExtResource("1_rmfid")
+texture_margin_top = 1.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+region_rect = Rect2(2, 2, 43, 42)
+
+[node name="ColorRect" type="ColorRect"]
+custom_minimum_size = Vector2(100, 100)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ym8eq")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 47.0
+offset_bottom = 29.0

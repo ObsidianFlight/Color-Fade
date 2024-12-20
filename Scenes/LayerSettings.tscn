@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0tax5it3yv4t"]
+
+[ext_resource type="Script" path="res://Scripts/toggleOverlay.gd" id="1_5e7ot"]
+[ext_resource type="Script" path="res://Scripts/layerOverlayAmount.gd" id="1_6j7n4"]
+[ext_resource type="Script" path="res://Scripts/repeatColorsOption.gd" id="3_jc88t"]
+[ext_resource type="Script" path="res://Scripts/extraColorsOption.gd" id="4_h5hpu"]
+[ext_resource type="Script" path="res://Scripts/maxcolorOption.gd" id="5_7uwxs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l4e0t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gjsv"]
+bg_color = Color(0.2484, 0.2484, 0.2484, 1)
+
+[sub_resource type="Theme" id="Theme_b5fd8"]
+LineEdit/styles/normal = SubResource("StyleBoxFlat_8gjsv")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dsgnb"]
+
+[node name="LayerSettings" type="VBoxContainer"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 551.0
+offset_bottom = 354.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Check box to enable Overlaying, Does nothing on the first layer.
+Input number to combine layers by value.
+Automatically fades between smoothly"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l4e0t")
+script = ExtResource("1_5e7ot")
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_b5fd8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dsgnb")
+context_menu_enabled = false
+clear_button_enabled = true
+middle_mouse_paste_enabled = false
+select_all_on_focus = true
+caret_blink = true
+caret_blink_interval = 1.0
+script = ExtResource("1_6j7n4")
+
+[node name="HSeparator" type="HSeparator" parent="."]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+text = "Repeat all colors X times"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_b5fd8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dsgnb")
+context_menu_enabled = false
+clear_button_enabled = true
+middle_mouse_paste_enabled = false
+select_all_on_focus = true
+caret_blink = true
+caret_blink_interval = 1.0
+script = ExtResource("3_jc88t")
+
+[node name="HSeparator2" type="HSeparator" parent="."]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+text = "Extra colors beyond repeat"
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_b5fd8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dsgnb")
+context_menu_enabled = false
+clear_button_enabled = true
+middle_mouse_paste_enabled = false
+select_all_on_focus = true
+caret_blink = true
+caret_blink_interval = 1.0
+script = ExtResource("4_h5hpu")
+
+[node name="HSeparator3" type="HSeparator" parent="."]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 2
+text = "Maximum color amount in layer. (0 to disable)"
+
+[node name="LineEdit3" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_b5fd8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dsgnb")
+context_menu_enabled = false
+clear_button_enabled = true
+middle_mouse_paste_enabled = false
+select_all_on_focus = true
+caret_blink = true
+caret_blink_interval = 1.0
+script = ExtResource("5_7uwxs")
+
+[connection signal="toggled" from="HBoxContainer/CheckBox" to="HBoxContainer/CheckBox" method="_on_toggled"]
+[connection signal="text_submitted" from="HBoxContainer/LineEdit" to="HBoxContainer/LineEdit" method="_on_text_submitted"]
+[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
+[connection signal="text_submitted" from="LineEdit2" to="LineEdit2" method="_on_text_submitted"]
+[connection signal="text_submitted" from="LineEdit3" to="LineEdit3" method="_on_text_submitted"]

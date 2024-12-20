@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://b50kmp8nh8rgq"]
+
+[ext_resource type="Texture2D" uid="uid://0s6u121h1ybd" path="res://Image/Black_Square.png" id="1_niikh"]
+
+[resource]
+texture = ExtResource("1_niikh")
+texture_margin_left = 5.0
+texture_margin_right = 4.0

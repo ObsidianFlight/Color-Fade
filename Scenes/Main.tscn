@@ -1,0 +1,420 @@
+[gd_scene load_steps=38 format=3 uid="uid://tgistickituq"]
+
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="1_65gt3"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_siwaa"]
+[ext_resource type="Script" path="res://Scripts/control.gd" id="2_toqto"]
+[ext_resource type="StyleBox" uid="uid://dfjoude51ofr4" path="res://Stylebox/Normal Button/Button.tres" id="3_asx3o"]
+[ext_resource type="StyleBox" uid="uid://ddd4q2omaaos2" path="res://Stylebox/UI Element.tres" id="3_tavot"]
+[ext_resource type="StyleBox" uid="uid://b50kmp8nh8rgq" path="res://Stylebox/Black Square.tres" id="4_kaxn2"]
+[ext_resource type="StyleBox" uid="uid://dwlqgbv2ow4k" path="res://Stylebox/Normal Button/Button_Selected.tres" id="4_nd3qs"]
+[ext_resource type="StyleBox" uid="uid://t1v47oo82t82" path="res://Stylebox/Normal Button/Button_Pressed.tres" id="5_5mh2w"]
+[ext_resource type="Texture2D" uid="uid://0s6u121h1ybd" path="res://Image/Black_Square.png" id="7_r5vne"]
+[ext_resource type="Texture2D" uid="uid://chrvycwgckoan" path="res://Image/Color Button/UI Element.png" id="8_lrq2v"]
+[ext_resource type="Script" path="res://Scripts/button.gd" id="10_n0ksg"]
+[ext_resource type="PackedScene" uid="uid://cnhwbhs5tkqna" path="res://Scenes/AddButton.tscn" id="11_jh7c5"]
+[ext_resource type="Script" path="res://Scenes/save_colorset.gd" id="11_x04hq"]
+[ext_resource type="Texture2D" uid="uid://dq10qsdhvkgwp" path="res://Image/Color Button/UI Button.png" id="12_dia8k"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_qyo0b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hjmtk"]
+texture = ExtResource("7_r5vne")
+texture_margin_top = 9.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kil2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0)
+draw_center = false
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_4ticy"]
+HScrollBar/icons/decrement = SubResource("ImageTexture_qyo0b")
+HScrollBar/icons/decrement_highlight = SubResource("ImageTexture_qyo0b")
+HScrollBar/icons/decrement_pressed = SubResource("ImageTexture_qyo0b")
+HScrollBar/icons/increment = SubResource("ImageTexture_qyo0b")
+HScrollBar/icons/increment_highlight = SubResource("ImageTexture_qyo0b")
+HScrollBar/icons/increment_pressed = SubResource("ImageTexture_qyo0b")
+HScrollBar/styles/grabber = ExtResource("3_asx3o")
+HScrollBar/styles/grabber_highlight = ExtResource("4_nd3qs")
+HScrollBar/styles/grabber_pressed = ExtResource("5_5mh2w")
+HScrollBar/styles/scroll = SubResource("StyleBoxTexture_hjmtk")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_4kil2")
+VScrollBar/icons/decrement = SubResource("ImageTexture_qyo0b")
+VScrollBar/icons/decrement_highlight = SubResource("ImageTexture_qyo0b")
+VScrollBar/icons/decrement_pressed = SubResource("ImageTexture_qyo0b")
+VScrollBar/icons/increment = SubResource("ImageTexture_qyo0b")
+VScrollBar/icons/increment_highlight = SubResource("ImageTexture_qyo0b")
+VScrollBar/icons/increment_pressed = SubResource("ImageTexture_qyo0b")
+VScrollBar/styles/grabber = ExtResource("3_asx3o")
+VScrollBar/styles/grabber_highlight = ExtResource("4_nd3qs")
+VScrollBar/styles/grabber_pressed = ExtResource("5_5mh2w")
+VScrollBar/styles/scroll = ExtResource("4_kaxn2")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_4kil2")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h257c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibbbh"]
+texture = ExtResource("8_lrq2v")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wrna0"]
+texture = ExtResource("8_lrq2v")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s0bum"]
+texture = ExtResource("8_lrq2v")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aer06"]
+texture = ExtResource("8_lrq2v")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uudui"]
+texture = ExtResource("8_lrq2v")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbop5"]
+texture = ExtResource("8_lrq2v")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3s6re"]
+texture = ExtResource("8_lrq2v")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yknpq"]
+texture = ExtResource("8_lrq2v")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tn76q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_67fbr"]
+texture = ExtResource("12_dia8k")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibagt"]
+texture = ExtResource("12_dia8k")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aaj4l"]
+texture = ExtResource("12_dia8k")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bcoh7"]
+texture = ExtResource("12_dia8k")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xe7cu"]
+texture = ExtResource("12_dia8k")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ihsx1"]
+texture = ExtResource("12_dia8k")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+modulate_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l73m2"]
+texture = ExtResource("12_dia8k")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3x8df"]
+texture = ExtResource("12_dia8k")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6rwao"]
+resource_local_to_scene = true
+texture = ExtResource("12_dia8k")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(4, 4, 37, 37)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_siwaa")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+script = ExtResource("1_65gt3")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("2_toqto")
+
+[node name="ColorView" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 17.0
+offset_right = 1157.0
+offset_bottom = 173.0
+theme_override_styles/panel = ExtResource("3_tavot")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/ColorView"]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 1157.0
+offset_bottom = 155.0
+theme = SubResource("Theme_4ticy")
+horizontal_scroll_mode = 2
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ColorView/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/separation = 26
+
+[node name="ControlPanel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 195.0
+offset_right = 1122.0
+offset_bottom = 550.0
+theme_override_styles/panel = ExtResource("3_tavot")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ControlPanel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 551.0
+offset_bottom = 354.0
+
+[node name="SaveColorset" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 851.0
+offset_top = 555.0
+offset_right = 1122.0
+offset_bottom = 630.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h257c")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_ibbbh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_wrna0")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_s0bum")
+theme_override_styles/hover = SubResource("StyleBoxTexture_aer06")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_uudui")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wbop5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_3s6re")
+theme_override_styles/normal = SubResource("StyleBoxTexture_yknpq")
+text = "OUTPUT COLORSET"
+script = ExtResource("11_x04hq")
+
+[node name="Options" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 555.0
+offset_right = 841.0
+offset_bottom = 630.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tn76q")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_67fbr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ibagt")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_aaj4l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bcoh7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_xe7cu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ihsx1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_l73m2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3x8df")
+text = "OPTIONS"
+script = ExtResource("10_n0ksg")
+
+[node name="Panel" type="Panel" parent="Control/Options"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 270.0
+offset_bottom = 74.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6rwao")
+
+[node name="ColorRect" type="ColorRect" parent="Control/Options/Panel"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 268.0
+offset_bottom = 72.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LayerPanel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 195.0
+offset_right = 205.0
+offset_bottom = 630.0
+theme_override_styles/panel = ExtResource("3_tavot")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/LayerPanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 172.0
+offset_bottom = 434.0
+theme = SubResource("Theme_4ticy")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/LayerPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="LayerAdd" parent="Control/LayerPanel/ScrollContainer/VBoxContainer" instance=ExtResource("11_jh7c5")]
+layout_mode = 2
+text = "PRESS TO ADD
+LAYER"
+
+[node name="AlternatesPanel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 195.0
+offset_right = 385.0
+offset_bottom = 630.0
+theme_override_styles/panel = ExtResource("3_tavot")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/AlternatesPanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 172.0
+offset_bottom = 434.0
+theme = SubResource("Theme_4ticy")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/AlternatesPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="AlternateAdd" parent="Control/AlternatesPanel/ScrollContainer/VBoxContainer" instance=ExtResource("11_jh7c5")]
+visible = false
+layout_mode = 2
+text = "PRESS TO ADD
+ALTERNATE"
+
+[node name="ColorPanel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 195.0
+offset_right = 565.0
+offset_bottom = 630.0
+theme_override_styles/panel = ExtResource("3_tavot")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/ColorPanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 172.0
+offset_bottom = 434.0
+theme = SubResource("Theme_4ticy")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="ColorAdd" parent="Control/ColorPanel/ScrollContainer/VBoxContainer" instance=ExtResource("11_jh7c5")]
+visible = false
+layout_mode = 2
+text = "PRESS TO ADD
+COLOR"
+
+[connection signal="button_down" from="Control/SaveColorset" to="Control/SaveColorset" method="_on_button_down"]
+[connection signal="button_down" from="Control/Options" to="Control/Options" method="_on_button_down"]
+[connection signal="button_down" from="Control/LayerPanel/ScrollContainer/VBoxContainer/LayerAdd" to="." method="_on_layer_add_button_down"]
+[connection signal="button_down" from="Control/AlternatesPanel/ScrollContainer/VBoxContainer/AlternateAdd" to="." method="_on_alternate_add_button_down"]
+[connection signal="button_down" from="Control/ColorPanel/ScrollContainer/VBoxContainer/ColorAdd" to="." method="_on_color_add_button_down"]

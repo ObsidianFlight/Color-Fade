@@ -1,0 +1,112 @@
+[gd_scene load_steps=9 format=3 uid="uid://cqg2fkxdsb60i"]
+
+[ext_resource type="Script" path="res://Scripts/finalResultToggle.gd" id="1_7htb2"]
+[ext_resource type="Script" path="res://Scripts/toggleOutline.gd" id="2_70qja"]
+[ext_resource type="Script" path="res://Scripts/updateSeparation.gd" id="3_ckge4"]
+[ext_resource type="Script" path="res://Scripts/updateOutputType.gd" id="4_yx641"]
+[ext_resource type="Script" path="res://Scripts/check_button.gd" id="5_6bd01"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txwmw"]
+bg_color = Color(0.2484, 0.2484, 0.2484, 1)
+
+[sub_resource type="Theme" id="Theme_rufph"]
+LineEdit/styles/normal = SubResource("StyleBoxFlat_txwmw")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2sqfg"]
+
+[node name="Settings" type="VBoxContainer"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 551.0
+offset_bottom = 354.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Show currently selected object   "
+
+[node name="CheckButton" type="CheckButton" parent="HBoxContainer"]
+layout_mode = 2
+button_pressed = true
+script = ExtResource("1_7htb2")
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "               Show final result on top"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="HBoxContainer2"]
+layout_mode = 2
+button_pressed = true
+script = ExtResource("2_70qja")
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "Show outline"
+
+[node name="HSeparator2" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+text = "Separation between colors in top list"
+
+[node name="LineEdit3" type="LineEdit" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_rufph")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2sqfg")
+text = "26"
+context_menu_enabled = false
+clear_button_enabled = true
+middle_mouse_paste_enabled = false
+select_all_on_focus = true
+caret_blink = true
+caret_blink_interval = 1.0
+script = ExtResource("3_ckge4")
+
+[node name="HSeparator3" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 2
+text = "Save colorset output type: Rhythia = 0, Phoenyx = 1"
+
+[node name="LineEdit4" type="LineEdit" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_rufph")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2sqfg")
+text = "0"
+context_menu_enabled = false
+clear_button_enabled = true
+middle_mouse_paste_enabled = false
+select_all_on_focus = true
+caret_blink = true
+caret_blink_interval = 1.0
+script = ExtResource("4_yx641")
+
+[node name="HSeparator4" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="HBoxContainer3"]
+layout_mode = 2
+script = ExtResource("5_6bd01")
+
+[node name="Label" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+text = "Show extra"
+
+[connection signal="toggled" from="HBoxContainer/CheckButton" to="HBoxContainer/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="HBoxContainer2/CheckButton" to="HBoxContainer2/CheckButton" method="_on_toggled"]
+[connection signal="text_submitted" from="LineEdit3" to="LineEdit3" method="_on_text_submitted"]
+[connection signal="text_submitted" from="LineEdit4" to="LineEdit4" method="_on_text_submitted"]
+[connection signal="toggled" from="HBoxContainer3/CheckButton" to="HBoxContainer3/CheckButton" method="_on_toggled"]
